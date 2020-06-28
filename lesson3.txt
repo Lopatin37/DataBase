@@ -1,0 +1,7 @@
+EXPLAIN SELECT * FROM employees e LEFT JOIN ON salaries s ON e.emp_no = s.emp_no GROUP BY s.emp_no LIMIT 10;
+
+Транзакционные операции: покупка, продажа, обмен через интернет, перевод денег, обналичивание и т.д.
+
+id,  select_type,     table,  partitions,   type,   possible_keys,            key,       key_len,  ref,      rows,    filtered,  Extra
+ 1,  SIMPLE   , salaries,      NULL, range,      "PRIMARY,    emp_no",  PRIMARY,    4,   NULL, 1346310,  100.00,"Using where"
+
