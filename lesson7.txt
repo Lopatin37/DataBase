@@ -1,0 +1,13 @@
+create user `Aleksandr`@`localhost` identified by `Lopatin47500`;
+
+grant all privileges on geodata to `Aleksandr`@`localhost`;
+
+flush privileges;
+
+Задачи на собеседование(SQL запросы):
+
+1) select user_id from users order by user_id;
+    select user_name from users where user_id < 4;
+    select user_name AS name, count(liked_users) from users join likes where `users`.`user_id` = `likes`.`liked_users` group by `likes`.`liked_users`;
+    select user_name AS name, count(liked_users) from users join likes where `users`.`user_id` = `likes`.`user_id` group by `likes`.`user_id`;
+    select A.user_id as a, B.user_id as b from likes A join likes B on A.user_id = B.liked_users and B.user_id = A.liked_users;
